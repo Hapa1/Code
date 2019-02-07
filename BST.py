@@ -22,4 +22,20 @@ def level_order(root):
     if root is None:
         return
     q = []
+    r = []
     q.append(root)
+
+    while(len(q) > 0):
+        print(q[0].data)
+        t = []
+        node = q.pop(0)
+        if node.left is not None:
+            t.append(node.left.data)
+            q.append(node.left)
+        if node.right is not None:
+            t.append(node.right.data)
+            q.append(node.right)
+        r.append(t)
+    print(r)
+level_order(root)
+
